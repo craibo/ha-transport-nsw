@@ -1,0 +1,38 @@
+### Cursor ###
+.cursor/
+
+### VSCode ###
+.vscode/
+
+### Python ###
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+### Testing ###
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+### IDE ###
+.idea/
+*.swp
+*.swo
+
+### OS ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

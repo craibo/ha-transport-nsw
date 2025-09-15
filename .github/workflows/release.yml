@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    name: Prepare release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Create ZIP file for release
+        run: |
+          cd custom_components/transport_nsw
+          zip -r ../../transport_nsw.zip .
+          cd ../..
+          
+      - name: Upload ZIP to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: transport_nsw.zip
+          asset_name: transport_nsw.zip
+          tag: ${{ github.ref }}
+          overwrite: true

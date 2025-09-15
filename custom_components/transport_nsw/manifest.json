@@ -1,0 +1,14 @@
+{
+  "domain": "transport_nsw",
+  "name": "Transport NSW",
+  "codeowners": ["@craibo"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/transport_nsw",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/craibo/ha-transport-nsw/issues",
+  "loggers": ["TransportNSW"],
+  "requirements": ["PyTransportNSW==0.1.1"],
+  "version": "2025.9.0"
+}

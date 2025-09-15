@@ -1,0 +1,30 @@
+# Testing dependencies for Transport NSW Home Assistant Integration
+
+# Core testing framework
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest-homeassistant-custom-component>=0.13.0
+
+# Home Assistant testing
+homeassistant>=2025.9.0
+
+# Required dependencies from manifest.json
+PyTransportNSW==0.1.1
+
+# Core HA dependencies for testing
+voluptuous>=0.13.1
+
+# Development and testing utilities
+black>=23.0.0
+ruff>=0.1.0
+mypy>=1.5.0
+pre-commit>=3.4.0
+
+# Additional testing utilities
+freezegun>=1.2.0
+responses>=0.23.0
+aioresponses>=0.7.0
+
+# For test coverage reporting
+coverage[toml]>=7.0.0
