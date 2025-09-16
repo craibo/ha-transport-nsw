@@ -47,7 +47,8 @@ class TestAsyncSetupEntry:
             },
         )
 
-        await async_setup_entry(hass, config_entry, mock_add_entities)
+        with patch("custom_components.transport_nsw.coordinator.TransportNSWCoordinator.async_config_entry_first_refresh", new_callable=AsyncMock):
+            await async_setup_entry(hass, config_entry, mock_add_entities)
 
         mock_add_entities.assert_called_once()
         entities = mock_add_entities.call_args[0][0]
@@ -79,7 +80,8 @@ class TestAsyncSetupEntry:
         )
         config_entry.subentries = {"subentry_1": subentry}
 
-        await async_setup_entry(hass, config_entry, mock_add_entities)
+        with patch("custom_components.transport_nsw.coordinator.TransportNSWCoordinator.async_config_entry_first_refresh", new_callable=AsyncMock):
+            await async_setup_entry(hass, config_entry, mock_add_entities)
 
         mock_add_entities.assert_called_once()
         entities = mock_add_entities.call_args[0][0]
@@ -113,7 +115,8 @@ class TestAsyncSetupEntry:
         )
         config_entry.subentries = {"sub1": subentry1, "sub2": subentry2}
 
-        await async_setup_entry(hass, config_entry, mock_add_entities)
+        with patch("custom_components.transport_nsw.coordinator.TransportNSWCoordinator.async_config_entry_first_refresh", new_callable=AsyncMock):
+            await async_setup_entry(hass, config_entry, mock_add_entities)
 
         mock_add_entities.assert_called_once()
         entities = mock_add_entities.call_args[0][0]

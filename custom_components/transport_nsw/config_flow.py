@@ -208,6 +208,13 @@ class TransportNSWOptionsFlow(OptionsFlow):
 
     def __init__(self, config_entry: ConfigEntry) -> None:
         """Initialize options flow."""
+        super().__init__()
+        self._config_entry = config_entry
+
+    @property
+    def config_entry(self) -> ConfigEntry:
+        """Return the config entry."""
+        return self._config_entry
 
     async def async_step_init(
         self, user_input: dict[str, Any] | None = None
