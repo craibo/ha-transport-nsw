@@ -4,6 +4,7 @@
   "codeowners": ["@craibo"],
   "config_flow": true,
   "dependencies": [],
+  "documentation": "https://github.com/craibo/ha-transport-nsw",
   "integration_type": "hub",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/craibo/ha-transport-nsw/issues",
