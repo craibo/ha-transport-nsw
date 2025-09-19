@@ -6,7 +6,6 @@
 [![hacs][hacsbadge]][hacs]
 
 ![Project Maintenance][maintenance-shield]
-[![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
 
 _Integration to retrieve real-time transport departure information from Transport NSW._
 
