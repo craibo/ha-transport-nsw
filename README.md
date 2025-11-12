@@ -7,7 +7,16 @@
 
 ![Project Maintenance][maintenance-shield]
 
-_Integration to retrieve real-time transport departure information from Transport NSW._
+Integration to retrieve real-time transport departure information from Transport NSW.
+
+---
+
+## Support this project
+
+[![Sponsor me on GitHub](https://img.shields.io/badge/Sponsor-craibo%20on%20GitHub-blue.svg?logo=github)](https://github.com/sponsors/craibo)
+[![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg?logo=paypal)](https://paypal.me/craibo?country.x=AU&locale.x=en_AU)
+
+---
 
 **This integration will set up the following platforms.**
 
