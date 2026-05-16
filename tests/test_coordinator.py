@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import CONF_API_KEY, CONF_NAME
+from homeassistant.const import ATTR_MODE, CONF_API_KEY, CONF_NAME
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import UpdateFailed
 
@@ -181,8 +181,15 @@ class TestTransportNSWCoordinator:
         # Configure the hass async_add_executor_job to return None
         hass.async_add_executor_job.return_value = None
 
-        with pytest.raises(UpdateFailed, match="No data returned from Transport NSW API"):
-            await coordinator._async_update_data()
+        result = await coordinator._async_update_data()
+        assert result == {
+            ATTR_ROUTE: None,
+            ATTR_DUE_IN: None,
+            ATTR_DELAY: None,
+            ATTR_REAL_TIME: None,
+            ATTR_DESTINATION: None,
+            ATTR_MODE: None,
+        }
 
     @pytest.mark.asyncio
     async def test_update_data_api_error(self, hass: HomeAssistant, mock_config_entry_legacy, mock_transport_nsw_api):
