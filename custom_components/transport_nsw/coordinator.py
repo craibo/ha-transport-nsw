@@ -121,7 +121,14 @@ class TransportNSWCoordinator(DataUpdateCoordinator):
             )
 
             if data is None:
-                _raise_update_failed("No data returned from Transport NSW API")
+                return {
+                    ATTR_ROUTE: None,
+                    ATTR_DUE_IN: None,
+                    ATTR_DELAY: None,
+                    ATTR_REAL_TIME: None,
+                    ATTR_DESTINATION: None,
+                    ATTR_MODE: None,
+                }
 
             return {
                 ATTR_ROUTE: _get_value(data.get("route")),
